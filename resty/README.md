@@ -1,3 +1,31 @@
+# LAB 26
+
+## Project: RESTy
+
+### Author: Sara Strasner
+
+### Links and Resources
+
+- [Latest PR](https://github.com/sarastrasner/resty/pull/1)
+
+### Setup
+
+#### `.env` requirements (where applicable)
+
+- SKIP_PREFLIGHT_CHECK=true
+
+#### How to initialize/run your application (where applicable)
+
+- `npm start`
+
+
+#### UML 
+![WRRC](src/assets/WRRC.JPG)
+
+
+
+#
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
