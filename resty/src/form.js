@@ -13,7 +13,7 @@ class Form extends React.Component {
   render() {
     return (
       <>
-        <form onSubmit={this.handleSubmit} >
+        <form onSubmit={this.callAPI} >
           <label>
             URL: 
             <input onChange={this.handleInput} type="text" name="URL" />
@@ -26,16 +26,30 @@ class Form extends React.Component {
           <input type="radio" value="Put" name="request" /> PUT
           <input type="radio" value="Delete" name="request" /> DELETE
         </div>
-        <section>
-          {this.state.method} {this.state.URL}
-        </section>
       </>
     );
   }
 
+  callAPI = async (e) => {
+    e.preventDefault();
+    const url = this.state.URL;
+    const method = this.state.method;
+    const results = await fetch(url, {method, mode: 'cors'})
+      .then(response => {
+        if(response.status !== 200)return;
+        for (var pair of response.headers.entries()) {
+          let headers = pair[0]+ ': '+ pair[1];
+          console.log('HEADERS', headers);
+        }
+        return response.json();
+      });
+      this.props.giveAPIresults(results);
+
+  }
+
   handleInput = e => {
     e.preventDefault();
-    this.setState({ words: e.target.value });
+    this.setState({ URL: e.target.value });
   };
 
   handleSubmit = e => {
