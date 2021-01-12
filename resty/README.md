@@ -6,7 +6,7 @@
 
 ### Links and Resources
 
-- [Latest PR](https://github.com/sarastrasner/resty/pull/1)
+- [Latest PR](https://github.com/sarastrasner/resty/pull/2)
 
 ### Setup
 
@@ -20,7 +20,7 @@
 
 
 #### UML 
-![WRRC](src/assets/WRRC.JPG)
+![UML](./assets/UML.png)
 
 
 
