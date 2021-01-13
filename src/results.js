@@ -5,7 +5,8 @@ class Results extends React.Component {
   render() {
     return (
       <>
-        {!this.props.count ? '' : <div>Count: {this.props.count}</div>}
+        {!this.props.headers ? '' : <div>Headers: {this.props.headers} </div>}
+        {!this.props.count ? '' : <div data-testid='count'>Count: {this.props.count}</div>}
         {!this.props.results ? (
           ''
         ) : (

@@ -20,7 +20,7 @@
 
 
 #### UML 
-![UML](./assets/UML.png)
+![UML](./assets/Lab27UML.png)
 
 
 

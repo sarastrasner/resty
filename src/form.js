@@ -7,18 +7,19 @@ class Form extends React.Component {
     this.state = {
       URL: '',
       method: '',
-      words: ''
+      words: '',
+      headers: '',
     };
   }
   render() {
     return (
       <>
-        <form onSubmit={this.callAPI} >
+        <form onSubmit={this.callAPI}>
           <label>
-            URL: 
+            URL:
             <input onChange={this.handleInput} type="text" name="URL" />
           </label>
-          <input type="submit" value="Go!" id="button"/>
+          <input type="submit" value="Go!" id="button" />
         </form>
         <div onChange={this.handleRadio}>
           <input type="radio" value="Get" name="request" /> GET
@@ -30,22 +31,23 @@ class Form extends React.Component {
     );
   }
 
-  callAPI = async (e) => {
+  callAPI = async e => {
     e.preventDefault();
     const url = this.state.URL;
     const method = this.state.method;
-    const results = await fetch(url, {method, mode: 'cors'})
-      .then(response => {
-        if(response.status !== 200)return;
+    const results = await fetch(url, { method, mode: 'cors' }).then(
+      response => {
+        if (response.status !== 200) return;
         for (var pair of response.headers.entries()) {
-          let headers = pair[0]+ ': '+ pair[1];
+          let headers = pair[0] + ': ' + pair[1];
           console.log('HEADERS', headers);
+          this.setState({ headers });
         }
         return response.json();
-      });
-      this.props.giveAPIresults(results);
-
-  }
+      }
+    );
+    this.props.giveAPIresults(results, this.state.headers);
+  };
 
   handleInput = e => {
     e.preventDefault();

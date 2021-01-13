@@ -22,8 +22,7 @@ class App extends React.Component {
   };
   render() {
     return (
-      <>
-      {this.state.headers}
+      <div>
         <Header />
         <Form 
         giveAPIresults={this.updateState} 
@@ -34,10 +33,9 @@ class App extends React.Component {
           headers={this.state.headers}
         />
         <Footer />
-      </>
+      </div>
     );
   }
 }
 
 export default App;
-//<span data-testId='money'>{this.state.money}</span>
