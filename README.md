@@ -5,8 +5,8 @@
 ### Author: Sara Strasner
 
 ### Links and Resources
-
-- [Latest PR](https://github.com/sarastrasner/resty/pull/2)
+- [deployed app](https://sarastrasner.github.io/resty/)
+- [Latest PR](https://github.com/sarastrasner/resty/pull/7)
 
 ### Setup
 
