@@ -51,20 +51,20 @@ class Form extends React.Component {
     let results = 'loading..';
     if (this.state.method === 'post') {
       try {
-        results = await superagent.post(url).send(this.state.query.JSON());
+        console.log('query:', this.state.query);
+        console.log('Stringified query', JSON.stringify(this.state.query));
+        let stringJSON = JSON.stringify(this.state.query)
+        results = await superagent.post(url).send(this.state.query)
+        .set('content-type', 'application/json');
         results = results.body;
       } catch (e) {
         console.error(e);
       }
     } else if (this.state.method === 'put') {
       console.log(this.state);
-      let queryArray = e.target.query.value.split(':');
-      let queryObj = {};
-      queryObj[queryArray[0]] = queryArray[1];
-      console.log(`FRED: `, queryObj, e.target.id.value, url);
       results = await superagent
         .put(`${url}/${e.target.id.value}`)
-        .send(queryObj)
+        .send(e.target.query.value)
         .set('Accept', 'application/json');
       console.log(results);
       results = results.body;
@@ -89,7 +89,7 @@ class Form extends React.Component {
 
   handleQuery = e => {
     e.preventDefault();
-    console.log(e.target.value);
+    console.log('inside the handleQuery', e.target.value);
     this.setState({ query: e.target.value });
   };
 
