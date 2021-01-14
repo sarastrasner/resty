@@ -4,7 +4,7 @@ import './footer.scss';
 class Footer extends React.Component {
   render(){
     return(
-      <footer>by Sara Strasner</footer>
+      <footer>by Stacy Burris, Tina Myers, Sara Strasner</footer>
     )
   }
 }

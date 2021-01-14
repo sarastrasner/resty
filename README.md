@@ -2,11 +2,24 @@
 
 ## Project: RESTy
 
-### Author: Sara Strasner
+### Authors: Stacy Burris, Sara Strasner, Tina Myers
 
 ### Links and Resources
 - [deployed app](https://sarastrasner.github.io/resty/)
-- [Latest PR](https://github.com/sarastrasner/resty/pull/7)
+- [Latest PR](https://github.com/sarastrasner/resty/pull/9)
+- [API used for testing](https://sarastrasner-auth-api.herokuapp.com/api/v1/jokes)
+
+1. For a delete, add an id in the ID field.
+1. For a post, put an object containing the new joke in the Search Query box. 
+```
+    {
+        "name": "light bulb",
+        "description": "How many programmers does it take to change a light bulb?",
+        "punchline": "None: It’s a hardware problem!",
+    },
+```
+1. For a put, put an id in the ID field and object containing the information to update in the Search Query box. 
+
 
 ### Setup
 
@@ -20,7 +33,7 @@
 
 
 #### UML 
-![UML](./assets/Lab27UML.png)
+![UML](./assets/resty-uml.png)
 
 
 
