@@ -6,7 +6,7 @@
 
 ### Links and Resources
 - [deployed app](https://sarastrasner.github.io/resty/)
-- [Latest PR](https://github.com/sarastrasner/resty/pull/7)
+- [Latest PR](https://github.com/sarastrasner/resty/pull/9)
 - [API used for testing](https://sarastrasner-auth-api.herokuapp.com/api/v1/jokes)
 
 1. For a delete, add an id in the ID field.
@@ -33,7 +33,7 @@
 
 
 #### UML 
-![UML](./assets/Lab27UML.png)
+![UML](./assets/resty-uml.png)
 
 
 
