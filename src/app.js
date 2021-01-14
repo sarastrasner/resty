@@ -15,10 +15,11 @@ class App extends React.Component {
     };
   }
 
-  updateState = (apiResults,headers) => {
-    this.setState({ headers });
+  updateState = (apiResults,headers={}) => {
+    // console.log('FRED IS IN THE APP', apiResults);
+    // this.setState({ headers });
     this.setState({ results: apiResults });
-    this.setState({ count: apiResults.count });
+    // this.setState({ count: apiResults.count });
   };
   render() {
     return (
