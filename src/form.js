@@ -51,11 +51,8 @@ class Form extends React.Component {
     let results = 'loading..';
     if (this.state.method === 'post') {
       try {
-        console.log('query:', this.state.query);
-        console.log('Stringified query', JSON.stringify(this.state.query));
-        let stringJSON = JSON.stringify(this.state.query)
         results = await superagent.post(url).send(this.state.query)
-        .set('content-type', 'application/json');
+          .set('content-type', 'application/json');
         results = results.body;
       } catch (e) {
         console.error(e);
@@ -76,7 +73,8 @@ class Form extends React.Component {
     }
     if (results) {
       // Store the URL, Method, and the Body (if any)
-      let resultString = JSON.stringify(results, this.state.method, this.state.url);
+      let resultsObj = { method: this.state.method, URL: this.state.URL, results };
+      let resultString = JSON.stringify(resultsObj);
       localStorage.setItem('successful results', resultString);
     }
     this.props.giveAPIresults(results);
