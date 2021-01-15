@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactJson from 'react-json-view';
+import './history.scss';
 
 class Results extends React.Component {
   render() {
@@ -10,7 +11,7 @@ class Results extends React.Component {
         {!this.props.results ? (
           ''
         ) : (
-          <div>
+          <div class='historyBox'>
             <ReactJson src={this.props.results} />
           </div>
         )}
